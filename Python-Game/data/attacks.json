@@ -1,0 +1,13 @@
+{
+  "attackCompatability": [
+    {
+      "attackID": 0,
+      "name": "Clobber",
+      "damage": 15,
+      "damageType": 2,
+      "range": 1,
+      "compatibleWeapons": [1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0]
+    }
+
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "$schema": "url",
+  "$id": "url",
+  "title": "Attack",
+  "description": "Specfiic attack given by damage, type, range, effect, and effect type",
+  "type": "object",
+  "properties": {
+    "moveID": {
+      "description": "Unique numeric identifier for a particular move",
+      "type": "integer",
+      "exclusiveMinimum": 0
+    },
+    "name": {
+      "description": "Name of attack",
+      "type": "string"
+    },
+    "damage": {
+      "description": "base damage of attack",
+      "type": "integer"
+    },
+    "damageType": {
+      "description": "Enum value representing the damage type (stab, slash .. etc)",
+      "type": "integer"
+    },
+    "range": {
+      "description": "Range of attack",
+      "type": "integer"
+    },
+    "debuff": {
+      "description": "Enum value representing additional effect type (0 for no additional effect)",
+      "type": "integer"
+    },
+    "debuffChance": {
+      "description": "Percent chance the debuff is applied when the move is used",
+      "type": "integer"
+    }
+  }
+}
+
+{
+  "$schema": "url",
+  "$id": "url",
+  "title": "Weapon",
+  "description": "Specfic Weapon given by id, name, type, scaling and moveset",
+  "type": "object",
+  "properties" {
+    "weaponID": {
+      "description":  "Unique ID for particular weapon"
+    },
+    "name": "Straight Sword",
+    "weaponType": 2,
+    "statScaling": [ 2, 0, 0 ],
+    "damageScaling": [ 1, 1, 0, 0 ],
+    "moveset": 
+  }
+}
+
+{
+  "$schema": "url",
+  "$id": "url",
+  "title": "Character",
+  "description": "Specfic Character given by id, name, stats, starting weapon, and description",
+  "type": "object",
+  "properties": {
+    "characterID": {
+      "description": "Unique characterID",
+      "type": "integer",
+      "exclusiveMinimum": 0
+    },
+    "name": {
+      "description": "Name of character",
+      "type": "string"
+    },
+
+    "stats": {
+      "description": "Characters stats given as [SPEED, DEX, POWER, WISDOM, HP]",
+      "type": "array",
+      "items": {
+        "type": "integer"
+      },
+      "minItems": 5,
+      "maxItems": 5,
+    },
+    "startingWeapon": {
+      "type": "object",
+      "properties": {
+        "weaponID": {
+          "description": "unique identifier for each weapon",
+          "type": "integer",
+          "exclusiveMinimum": 0
+        },
+        "name": {
+          "description": "name of particular weapon",
+          "type": "string"
+        },
+        "weaponType": {
+          "description": "Type of weapon (0-11 enum)",
+          "type": "integer",
+          "exclusiveMinimum": 0
+        },
+        "statScaling": {
+          "description": "Array representing the weapons scaling with each stat",
+          "type": "array",
+          "items": {
+            "type": "integer"
+          },
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "damageScaling": {
+          "description": "Array representing the weapons scaling with each damage type",
+          "type": "array",
+          "items": {
+            "type": "integer"
+          },
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "moveset": {
+          "description": "Array of attacks corresponding to particular weapon",
+          "type": "array",
+          "items": {
+            "description": "Specfiic attack given by damage, type, range, effect, and effect type",
+            "type": "object",
+            "properties": {
+              "moveID": {
+                "description": "Unique numeric identifier for a particular move",
+                "type": "integer",
+                "exclusiveMinimum": 0
+              },
+              "name": {
+                "description": "Name of attack",
+                "type": "string"
+              },
+              "damage": {
+                "description": "base damage of attack",
+                "type": "integer"
+              },
+              "damageType": {
+                "description": "Enum value representing the damage type (stab, slash .. etc)",
+                "type": "integer"
+              },
+              "range": {
+                "description": "Range of attack",
+                "type": "integer"
+              },
+              "debuff": {
+                "description": "Enum value representing additional effect type (0 for no additional effect)",
+                "type": "integer"
+              },
+              "debuffChance": {
+                "description": "Percent chance the debuff is applied when the move is used",
+                "type": "integer"
+              }
+            }
+          }
+          "minItems": 1,
+          "uniqueItems":  true
+        }
+      }
+    }
+  }
+}
