@@ -24,10 +24,21 @@ class DamageType(Enum):
 
 class Attack:
 
-	def _init_(self, name, damage, damageType, attackRange, effectType, effectChance):
+	def __init__(self, name, damage, damageType, range, effectType, effectChance):
 		self.name = name
 		self.damage = damage
 		self.damageType = damageType
-		self.range = attackRange
+		self.range = range
 		self.effectType = effectType
 		self.effectChance = effectChance
+
+	def __str__(self):
+		returnString = self.name + ",\n"
+		returnString += "DAMAGE: " + str(self.damage) + ",\n"
+		returnString += "DAMAGE TYPE: " + str(self.damageType) + ",\n"
+		returnString += "RANGE: " + str(self.range) + ",\n"
+		returnString += "EFFECT: \n"
+		if (self.effectType == 0):
+			return returnString + "NONE"
+		returnString += str(self.effectType)
+		return returnString + "\nPROC CHANCE: " + str(self.effectChance)

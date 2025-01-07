@@ -1,8 +1,9 @@
 from venv import create
-import Attack
-import Weapon
-import Character
+from Attack import Attack
+from Weapon import Weapon
+from Character import Character
 import json
+import os
 from enum import Enum
 
 class DamageType(Enum):
@@ -19,7 +20,6 @@ class Debuff(Enum):
     WEAKEN = 3
     PARALYZE = 4
     BLIND = 5
-   
     
 class WeaponType(Enum):
     GAUNTLET = 0
@@ -41,9 +41,26 @@ class Stats(Enum):
     POWER = 2
     WISDOM = 3
     HP = 4
+
+def createAttack(dict):
+    attack = Attack(dict["name"], dict["damage"], dict["damageType"], dict["range"], dict["debuff"], dict["debuffChance"])
+    return attack
+
+def createWeapon(dict):
+    weapon = Weapon(dict["name"], dict["weaponType"], dict["statScaling"], dict["damageScaling"])
+    for atk in dict["startingMoves"]:
+        weapon.addMove(createAttack(atk))
+
+    return weapon
+
+def createChar(dict):
+    weaponAsDict = dict["startingWeapon"]
+    weapon = createWeapon(weaponAsDict)
+    character = Character(dict["name"], dict["stats"], weapon, 1)
+    return character
    
 
-def selectCharacters(characters, charType):
+def selectCharacter(characters, charType):
     characterIndices = 0
     arrCharID = []
     print("Party " + charType + " select \n \n")
@@ -65,36 +82,32 @@ def selectCharacters(characters, charType):
         except:
             print("Invalid Input")
             invalidInput = True
-    charChoiceDict = characters[characterSelect-1]
-    
-   # charChoice = createChar(charChoiceDict)
-    #weaponDict = charChoiceDict["startingWeapon"]
-    
-    #attackDict = 
 
-    #weaponChoice = Weapon(weaponDict["name"], weaponDict["weaponType"], weaponDict["statScaling"], weaponDict["damageScaling"], )
-    #charChoice = Character(charChoiceDict['name'], )        
+    charChoiceDict = characters[characterSelect-1]
+    charChoice = createChar(charChoiceDict)
+
     del characters[characterSelect-1]
     
-    return 
+    return charChoice
     
 
 
-def selectCharacter():
+def selectParty():
     partyList = []    
 
-    charFile = open("data\characters.json", "r")
+    path = "data\characters.json"
+    charFile = open(path, "r")
     charsAsJSON = charFile.read()
     characters = json.loads(charsAsJSON)
     
-    partyList.append(selectCharacters(characters["leaders"], "leader"))
+    partyList.append(selectCharacter(characters["leaders"], "leader"))
     #create char object
     
-    partyList.append(selectCharacters(characters["followers"], "member"))
+    partyList.append(selectCharacter(characters["followers"], "member"))
     #create char object
     
     
-    partyList.append(selectCharacters(characters["followers"], "member"))
+    partyList.append(selectCharacter(characters["followers"], "member"))
     #create char object
     return partyList
 
@@ -114,7 +127,9 @@ def mainMenuSelect():
 def runGameLoop():
     gameRunning =  (int)(mainMenuSelect())
     while gameRunning:
-        selectCharacter()
+        partyList = selectParty()
+        for member in partyList:
+            print(member)
         gameRunning = False
        
     print("Come back soon!")

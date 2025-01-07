@@ -44,9 +44,8 @@
         "name": "Waraxe",
         "weaponType": 4,
         "statScaling": [ 1, 1, 0 ],
-        "damageScaling": [ 0, 1, 0, 0 ]
-      },
-      "startingMoves": [
+        "damageScaling": [ 0, 1, 0, 0 ],
+        "startingMoves": [
         {
           "moveID":  0,
           "name": "Clobber",
@@ -65,41 +64,42 @@
           "debuff": 0,
           "debuffChance": 0
         }
-      ],
+      ]
+      },
       "description": "Philbert is a mischevious gnome. He is known for playing mischeveous tricks on various people nobility. His punishment is that he is now a sellsword for House Destchius"
     },
     {
-      "characterID": -1,
-      "name": "",
-      "stats": [ 0, 0, 0, 0, 0 ],
+      "characterID": 4,
+      "name": "Zorch",
+      "stats": [ 4, 1, 1, 1, 60 ],
       "startingWeapon": {
-        "weaponID": -1,
-        "name": "",
-        "weaponType": 0,
-        "statScaling": [ 0, 0, 0 ],
-        "damageScaling": [ 0, 0, 0, 0 ]
-      },
-      "startingMoves": [
+        "weaponID": 8,
+        "name": "Mace",
+        "weaponType": 6,
+        "statScaling": [ 1, 1, 0 ],
+        "damageScaling": [ 0, 0, 1, 0 ],
+        "startingMoves": [
         {
-          "moveID":  -1,
-          "name": "",
-          "damage": 0,
-          "damageType": 0,
-          "range": 0,
-          "debuff": 0,
-          "debuffChance": 0
+          "moveID":  5,
+          "name": "Slam",
+          "damage": 10,
+          "damageType": 2,
+          "range": 1,
+          "debuff": 4,
+          "debuffChance": 50
         },
         {
-          "moveID":  -1,
-          "name": "",
-          "damage": 0,
-          "damageType": 0,
-          "range": 0,
-          "debuff": 0,
-          "debuffChance": 0
+          "moveID":  9,
+          "name": "Limb Smash",
+          "damage": 8,
+          "damageType": 2,
+          "range": 1,
+          "debuff": 4,
+          "debuffChance": 100
         }
-      ],
-      "description": ""
+      ]
+      },
+      "description": "Zorch is a goblin incapable of understanding the common tongue. Gold is the only language he speaks, and so long theres gold in it, he is up for an adventure"
     }
   ]
 }

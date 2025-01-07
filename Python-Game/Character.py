@@ -12,20 +12,25 @@ class Stats(Enum):
     
 class Character:
     
-    def __init__(self,name, stats, weapon, friendly = 0, items = None):
+    def __init__(self, name, stats, weapon, friendly = 0, items = None):
         self.name = name
         self.stats = stats
         self.weapon = weapon
         self.friendly = friendly
-        self.currentHP = self.stats[Stats.HP.value()]
+        self.currentHP = self.stats[4]
         if items == None:
             self.items = []
         self.x = -1
         self.y = -1
         
     def __str__(self):
-        return self.name + " at " + "(" + self.x + "," + self.y + ")"
+        alignment = "ENEMY"
+        if (self.friendly == 1):
+            alignment = "FRIENDLY"
+        return "CHARACTER: " + self.name + ", \nSTATS: " + str(self.stats) + ", \n" + "TYPE: "+ alignment + "\nEQUIPPED WEAPON: \n\n" + str(self.weapon)
     
+    def getNameAndPos(self):
+        return self.name + " at " + "(" + self.x + "," + self.y + ")"
 
     def attack(self,target, attack):
         #calc scaling and damage

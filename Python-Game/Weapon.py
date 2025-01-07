@@ -1,4 +1,6 @@
 import Attack
+import Weapon
+import Character
 from enum import Enum
 
 
@@ -27,13 +29,28 @@ class Stats(Enum):
    
 class Weapon():
     
-    def _init_(self, name, weaponType, statScaling, damageScaling, moveset = None):
+    def __init__(self, name, weaponType, statScaling, damageScaling, moveset = None):
         self.name = name
         self.weaponType = weaponType
         self.statScaling = statScaling
         self.damageScaling = damageScaling
         if moveset == None:
-            moveset = []
+            self.moveset = []
+        else:
+            self.moveset = moveset
+
+    def __str__(self):
+        returnString = ""
+        returnString += self.name
+        returnString = returnString + "\nWEAPON TYPE: " + str(self.weaponType) + ",\n" 
+        returnString = returnString + "STAT SCALING: " + str(self.statScaling) + ",\n"
+        returnString = returnString + "DAMAGE TYPE SCALING: " + str(self.damageScaling) + ",\n"
+        returnString += "MOVESET: \n"
+        for move in self.moveset:
+            returnString += "\n"
+            returnString += str(move)
+            returnString += ",\n"
+        return returnString
             
     #adds moveid to moveset list, returns -1 if moveset is full        
     def addMove(self, move):
