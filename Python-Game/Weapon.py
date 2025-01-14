@@ -5,6 +5,7 @@ from enum import Enum
 
 
 class WeaponType(Enum):
+    SPECIAL = -1
     GAUNTLET = 0
     DAGGER = 1
     SWORD = 2

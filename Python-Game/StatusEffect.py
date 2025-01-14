@@ -1,16 +1,16 @@
 from Effect import Effect
-from abc import ABC, abstractclassmethod
+from abc import ABC, abstractmethod
 
 class StatusEffect(Effect):
     name = 'Nothing'
     baseDuration = 10
     
-    @abstractclassmethod
+    @abstractmethod
     def _init_(self):
         pass
    
    
-    @abstractclassmethod
+    @abstractmethod
     def applyEffect(self, source, target):
         if self not in target.debuffs:    
             target.debuffs.add(self)
@@ -18,7 +18,7 @@ class StatusEffect(Effect):
         
     
     #called every turn, (poison/bleed apply damage, )
-    @abstractclassmethod
+    @abstractmethod
     def updateStatus(self, target):
         pass
     

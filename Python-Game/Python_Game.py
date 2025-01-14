@@ -4,6 +4,7 @@ from Weapon import Weapon
 from Character import Character
 import json
 import os
+import random
 from enum import Enum
 
 class DamageType(Enum):
@@ -53,10 +54,10 @@ def createWeapon(dict):
 
     return weapon
 
-def createChar(dict):
+def createChar(dict, alignment = 1):
     weaponAsDict = dict["startingWeapon"]
     weapon = createWeapon(weaponAsDict)
-    character = Character(dict["name"], dict["stats"], weapon, 1)
+    character = Character(dict["name"], dict["stats"], weapon, alignment)
     return character
    
 
@@ -90,7 +91,12 @@ def selectCharacter(characters, charType):
     
     return charChoice
     
-
+def getRandomEncounter(level):
+    enemyList = []
+    for i in range(2):
+        enemySelect = random.randint(0,len(level["encounters"])-1)
+        enemyList.append(createChar(level["encounters"][enemySelect],0))
+    return enemyList
 
 def selectParty():
     partyList = []    
@@ -122,15 +128,25 @@ def mainMenuSelect():
         if (menuSelect == "1" or menuSelect == "0"):
             inputValid = True
             
-    return menuSelect
+    return (int)(menuSelect)
 
 def runGameLoop():
-    gameRunning =  (int)(mainMenuSelect())
+    gameRunning =  mainMenuSelect()
+    encounterFile = open("data\encounters.json", "r")
+    encountersAsJSON = encounterFile.read()
+    encounterData = json.loads(encountersAsJSON)
+    
     while gameRunning:
         partyList = selectParty()
         for member in partyList:
             print(member)
-        gameRunning = False
+        for level in encounterData["levels"]:
+            currEnemyList = getRandomEncounter(level)
+            
+                
+        
+
+        gameRunning =  mainMenuSelect()
        
     print("Come back soon!")
     return

@@ -1,59 +1,3 @@
-{
-  "$schema": "url",
-  "$id": "url",
-  "title": "Attack",
-  "description": "Specfiic attack given by damage, type, range, effect, and effect type",
-  "type": "object",
-  "properties": {
-    "moveID": {
-      "description": "Unique numeric identifier for a particular move",
-      "type": "integer",
-      "exclusiveMinimum": 0
-    },
-    "name": {
-      "description": "Name of attack",
-      "type": "string"
-    },
-    "damage": {
-      "description": "base damage of attack",
-      "type": "integer"
-    },
-    "damageType": {
-      "description": "Enum value representing the damage type (stab, slash .. etc)",
-      "type": "integer"
-    },
-    "range": {
-      "description": "Range of attack",
-      "type": "integer"
-    },
-    "debuff": {
-      "description": "Enum value representing additional effect type (0 for no additional effect)",
-      "type": "integer"
-    },
-    "debuffChance": {
-      "description": "Percent chance the debuff is applied when the move is used",
-      "type": "integer"
-    }
-  }
-}
-
-{
-  "$schema": "url",
-  "$id": "url",
-  "title": "Weapon",
-  "description": "Specfic Weapon given by id, name, type, scaling and moveset",
-  "type": "object",
-  "properties" {
-    "weaponID": {
-      "description":  "Unique ID for particular weapon"
-    },
-    "name": "Straight Sword",
-    "weaponType": 2,
-    "statScaling": [ 2, 0, 0 ],
-    "damageScaling": [ 1, 1, 0, 0 ],
-    "moveset": 
-  }
-}
 
 {
   "$schema": "url",
@@ -79,7 +23,7 @@
         "type": "integer"
       },
       "minItems": 5,
-      "maxItems": 5,
+      "maxItems": 5
     },
     "startingWeapon": {
       "type": "object",
@@ -153,7 +97,7 @@
                 "type": "integer"
               }
             }
-          }
+          },
           "minItems": 1,
           "uniqueItems":  true
         }

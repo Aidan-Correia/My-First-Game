@@ -1,10 +1,13 @@
 from enum import Enum
 
 class DamageType(Enum):
+		STATUS = -1
 		STAB = 0
 		SLASH = 1
 		BLUDGEON = 2
 		MAGIC = 3
+		HEAL = 4
+	
 
 class Debuff(Enum):
 	NOTHING = 0
@@ -16,11 +19,7 @@ class Debuff(Enum):
 	BLIND = 6
 	
 
-class DamageType(Enum):
-		STAB = 0
-		SLASH = 1
-		BLUDGEON = 2
-		MAGIC = 3
+
 
 class Attack:
 

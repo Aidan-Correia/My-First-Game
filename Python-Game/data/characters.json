@@ -32,7 +32,74 @@
         ]
       },
       "description": "Ser Bravious is an incredibly gifted, nimble dualist. He achieved great fame after succesfully stealing the Amulet of Nafaarus from house Tuulth. Instead of being executed however, Lord Kraaf was so impressed he decided to knight him instead."
+    },
+    {
+      "characterID":  1,
+      "name": "Lord Cazzamir",
+      "stats": [ 2, 1, 1, 3, 60 ],
+      "startingWeapon": {
+        "weaponID": 12,
+        "name": "Staff of Ra",
+        "weaponType": 8,
+        "statScaling": [ 0, 0, 2 ],
+        "damageScaling": [ 0, 0, 0, 1 ],
+        "startingMoves": [
+          {
+            "moveID": 2,
+            "name": "Magic Missle",
+            "damage": 10,
+            "damageType": 3,
+            "range": 5,
+            "debuff": 0,
+            "debuffChance": 0
+          },
+          {
+            "moveID": 17,
+            "name": "Heal Beam",
+            "damage": -10,
+            "damageType": 4,
+            "range": 3,
+            "debuff": 0,
+            "debuffChance": 0
+          }
+        ]
+      },
+      "description": "Lord Cazzamir is a gifted magic user. He was the court Wizard for house Aerodell before he was banished for practicing the dark arts"
+    },
+    {
+      "characterID":  2,
+      "name": "Ser Grunbly",
+      "stats": [ 1, 1, 3, 1, 80 ],
+      "startingWeapon": {
+        "weaponID": 7,
+        "name": "Zweihander",
+        "weaponType": 3,
+        "statScaling": [ 0, 2, 0 ],
+        "damageScaling": [ 1, 1, 0, 0 ],
+        "startingMoves": [
+          {
+            "moveID": 3,
+            "name": "Stunning Roar",
+            "damage": 0,
+            "damageType": -1,
+            "range": 4,
+            "debuff": 5,
+            "debuffChance": 100
+          },
+          {
+            "moveID": 1,
+            "name": "Quick Cut",
+            "damage": 15,
+            "damageType": 1,
+            "range": 3,
+            "debuff": 0,
+            "debuffChance": 0
+          }
+        ]
+      },
+      "description": "Grunbly is a half giant general for house Thornwall. He is known for his extreme fortitude in battle being known as 'the invincible' through his time in conquest. He was banished from his role as general after it was discovered he was eating the dead enemies in battle (although he claims it was a religious rite for his giant ancestors)."
     }
+    
   ],
   "followers": [
     {
@@ -100,6 +167,138 @@
       ]
       },
       "description": "Zorch is a goblin incapable of understanding the common tongue. Gold is the only language he speaks, and so long theres gold in it, he is up for an adventure"
+    },
+    {
+      "characterID": 5,
+      "name": "Kornafurr",
+      "stats": [ 1, 1, 1, 3, 60 ],
+      "startingWeapon": {
+        "weaponID": 11,
+        "name": "Wand of Roog",
+        "weaponType": 11,
+        "statScaling": [ 0, 0, 2 ],
+        "damageScaling": [ 0, 0, 0, 1 ],
+        "startingMoves": [
+        {
+          "moveID":  17,
+          "name": "Heal Beam",
+          "damage": -10,
+          "damageType": 4,
+          "range": 3,
+          "debuff": 0,
+          "debuffChance": 0
+        },
+        {
+          "moveID":  0,
+          "name": "Clobber",
+          "damage": 15,
+          "damageType": 2,
+          "range": 1,
+          "debuff": 0,
+          "debuffChance": 0
+        }
+      ]
+      },
+      "description": "Kornafurr was a priest for the collapsed house Brontamire. He now roams the lands as a healer for hire."
+    },
+    {
+      "characterID": 6,
+      "name": "Cronsbach",
+      "stats": [ 3, 2, 1, 1, 50 ],
+      "startingWeapon": {
+        "weaponID": 3,
+        "name": "Longbow",
+        "weaponType": 10,
+        "statScaling": [ 2, 0, 0 ],
+        "damageScaling": [ 1, 0, 0, 0],
+        "startingMoves": [
+        {
+          "moveID":  6,
+          "name": "Arrow Shot",
+          "damage": 10,
+          "damageType": 0,
+          "range": 5,
+          "debuff": 0,
+          "debuffChance": 0
+        },
+        {
+          "moveID":  12,
+          "name": "Poison Arrow",
+          "damage": 8,
+          "damageType": 0,
+          "range": 5,
+          "debuff": 2,
+          "debuffChance": 100
+        }
+      ]
+      },
+      "description": "Cronsbach was a notorious bandit. He became a mercenary after his camp was seiged by house Torrimith"
+    },
+    {
+      "characterID": 7,
+      "name": "Garnature",
+      "stats": [ 2, 1, 1, 2, 50 ],
+      "startingWeapon": {
+        "weaponID": 2,
+        "name": "Bowstaff",
+        "weaponType": 8,
+        "statScaling": [ 2, 1, 0 ],
+        "damageScaling": [ 0, 0, 1, 0],
+        "startingMoves": [
+        {
+          "moveID":  2,
+          "name": "Magic Missle",
+          "damage": 10,
+          "damageType": 3,
+          "range": 5,
+          "debuff": 0,
+          "debuffChance": 0
+        },
+        {
+          "moveID":  5,
+          "name": "Slam",
+          "damage": 10,
+          "damageType": 0,
+          "range": 5,
+          "debuff": 4,
+          "debuffChance": 50
+        }
+      ]
+      },
+      "description": "Garnature was a part of the Druid inner circle, however, his shrewd and eccentric ways resulted in him being relieved of his post"
+    },
+    {
+      "characterID": 8,
+      "name": "Skuloweis",
+      "stats": [ 2, 1, 2, 1, 70 ],
+      "startingWeapon": {
+        "weaponID": 9,
+        "name": "Warhammer",
+        "weaponType": 7,
+        "statScaling": [ 0, 2, 0 ],
+        "damageScaling": [ 0, 0, 1, 0],
+        "startingMoves": [
+        {
+          "moveID":  3,
+          "name": "Stunning Roar",
+          "damage": 0,
+          "damageType": -1,
+          "range": 4,
+          "debuff": 5,
+          "debuffChance": 100
+        },
+        {
+          "moveID":  5,
+          "name": "Slam",
+          "damage": 8,
+          "damageType": 0,
+          "range": 5,
+          "debuff": 4,
+          "debuffChance": 50
+        }
+      ]
+      },
+      "description": "Skuloweis was the champion of Sir Tarbege of The Kroft, however since his lord's passing, Skeelowell roams the lands in search of a purpose"
     }
   ]
 }

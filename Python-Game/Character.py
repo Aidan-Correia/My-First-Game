@@ -1,4 +1,3 @@
-from re import X
 import Attack
 import Weapon
 from enum import Enum
@@ -32,7 +31,7 @@ class Character:
     def getNameAndPos(self):
         return self.name + " at " + "(" + self.x + "," + self.y + ")"
 
-    def attack(self,target, attack):
+    def attack(self, target, attack):
         #calc scaling and damage
         #replace effect reference with switch statement based on effect type
         target.takeDamage(attack.damage, attack.damageType)
@@ -50,13 +49,16 @@ class Character:
         self.currentHP -= damageTaken
         if self.currentHP <= 0:
             self.currentHP = 0
-        elif self.currentHP > self.stats[Stats.HP.value()]:
-            self.currentHP = self.stats[Stats.HP.value()]
+        elif self.currentHP > self.stats[4]:
+            self.currentHP = self.stats[4]
             
             
         
                 
-
+    def selectTarget(self, gameBoard):
+        #crude target selection algorithm, first check what players can be reached this turn (within 3 squares), then, check what status conditions you can inflict based on your moveset
+        #finally, check if you can inflict a status on any reachable players, if you can, move to that player (if necessary) and inflict him with a random status effect they are not yet afflicted by
+        pass
 
     def useItem(self, itemIndex):
         return self.items.pop(itemIndex)

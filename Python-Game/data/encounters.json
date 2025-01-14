@@ -1,9 +1,223 @@
 {
-    "level": 0,
-    "encounters": 
+    "levels": 
     [
-       {
-        "name": "evil troll"
-       } 
+        {
+        "difficulty": 1,
+        "encounters": 
+        [
+        {
+            "enemyID":  0,
+            "name": "Grey Wolf",
+            "stats": [ 1, 1, 1, 1, 35 ],
+            "startingWeapon":
+            {
+            "name": "Wolf Fang",
+            "weaponType": -1,
+            "statScaling": [ 0, 0, 0 ],
+            "damageScaling": [ 0, 0, 0, 0 ],
+            "startingMoves": 
+                [
+                    {
+                        "name": "Bite",
+                        "damage": 8,
+                        "damageType": 0,
+                        "range": 1,
+                        "debuff": 0,
+                        "debuffChance": 0
+                    }
+                 ]
+            }
+            
+        },
+        {
+            "enemyID":  1,
+            "name": "Goblin Henchman",
+            "stats": [ 1, 1, 1, 1, 35 ],
+            "startingWeapon":
+            {
+            "name": "Goblin Schimitar",
+            "weaponType": 2,
+            "statScaling": [ 0, 0, 0 ],
+            "damageScaling": [ 0, 0, 0, 0 ],
+            "startingMoves": 
+                [
+                    {
+                        "name": "Poison Slash",
+                        "damage": 6,
+                        "damageType": 1,
+                        "range": 1,
+                        "debuff": 2,
+                        "debuffChance": 50
+                    }
+                 ]
+            }
+            
+        },
+        {
+            "enemyID":  2,
+            "name": "Zombie",
+            "stats": [ 1, 1, 1, 1, 35 ],
+            "startingWeapon":
+            {
+            "name": "Zombie Body",
+            "weaponType": -1,
+            "statScaling": [ 0, 0, 0 ],
+            "damageScaling": [ 0, 0, 0, 0 ],
+            "startingMoves": 
+                [
+                    {
+                        "name": "Bite",
+                        "damage": 8,
+                        "damageType": 0,
+                        "range": 1,
+                        "debuff": 0,
+                        "debuffChance": 0
+                    },
+                    {
+                        "name": "Poison Hand",
+                        "damage": 0,
+                        "damageType": -1,
+                        "range": 1,
+                        "debuff": 2,
+                        "debuffChance": 100
+                    }
+                 ]
+            }
+            
+        }
+        ]
+        },
+        {
+            "difficulty": 2,
+            "encounters": 
+            [
+            {
+                "enemyID":  0,
+                "name": "Dire Wolf",
+                "stats": [ 2, 1, 1, 1, 35 ],
+                "startingWeapon":
+                {
+                "name": "Wolf Fang",
+                "weaponType": -1,
+                "statScaling": [ 0, 0, 0 ],
+                "damageScaling": [ 0, 0, 0, 0 ],
+                "startingMoves": 
+                    [
+                        {
+                            "name": "Bite",
+                            "damage": 10,
+                            "damageType": 0,
+                            "range": 1,
+                            "debuff": 0,
+                            "debuffChance": 0
+                        },
+                        {
+                            "name": "Scratch",
+                            "damage": 8,
+                            "damageType": 1,
+                            "range": 1,
+                            "debuff": 1,
+                            "debuffChance": 50
+                        }
+                     ]
+                }
+                
+            },
+            {
+                "enemyID":  1,
+                "name": "Goblin Soldier",
+                "stats": [ 1, 1, 1, 1, 45 ],
+                "startingWeapon":
+                {
+                "name": "Goblin Spear",
+                "weaponType": 9,
+                "statScaling": [ 0, 0, 0 ],
+                "damageScaling": [ 0, 0, 0, 0 ],
+                "startingMoves": 
+                    [
+                        {
+                            "name": "Impale",
+                            "damage": 10,
+                            "damageType": 0,
+                            "range": 1,
+                            "debuff": 0,
+                            "debuffChance": 0
+                        }
+                     ]
+                }
+                
+            },
+            {
+                "enemyID":  2,
+                "name": "Ghoul",
+                "stats": [ 1, 1, 1, 1, 40 ],
+                "startingWeapon":
+                {
+                "name": "Ghoul Body",
+                "weaponType": -1,
+                "statScaling": [ 0, 0, 0 ],
+                "damageScaling": [ 0, 0, 0, 0 ],
+                "startingMoves": 
+                    [
+                        {
+                            "name": "Screech",
+                            "damage": 0,
+                            "damageType": 0,
+                            "range": 3,
+                            "debuff": 5,
+                            "debuffChance": 100
+                        },
+                        {
+                            "name": "Poison Claw",
+                            "damage": 8,
+                            "damageType": -1,
+                            "range": 1,
+                            "debuff": 2,
+                            "debuffChance": 75
+                        }
+                     ]
+                }
+                
+            }
+            ]
+        },
+        {
+           "difficulty": 3,
+            "encounters": 
+            [
+                {
+                    "enemyID":  0,
+                    "name": "Goblin Commander",
+                    "stats": [ 2, 1, 2, 1, 50 ],
+                    "startingWeapon":
+                    {
+                    "name": "Halberd",
+                    "weaponType": 9,
+                    "statScaling": [ 0, 0, 0 ],
+                    "damageScaling": [ 0, 0, 0, 0 ],
+                    "startingMoves": 
+                        [
+                            {
+                                "name": "Whirlwind Slash",
+                                "damage": 12,
+                                "damageType": 1,
+                                "range": 1,
+                                "debuff": 0,
+                                "debuffChance": 0
+                            },
+                            {
+                                "name": "Lunging Thrust",
+                                "damage": 10,
+                                "damageType": 0,
+                                "range": 1,
+                                "debuff": 1,
+                                "debuffChance": 50
+                            }
+                         ]
+                    }
+                    
+                }
+            ] 
+        }
     ]
 }
